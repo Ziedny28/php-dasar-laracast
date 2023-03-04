@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            display: grid;
-            place-items: center;
-            height: 100vh;
-            margin:0;
-            font-family: sans-serif;
-        }
-    </style>
-</head>
-<body>
-        <?php
+<?php
 $books = [
     [
         'name' => 'Do Androids Dreams of Electric Sheep',
@@ -41,15 +23,5 @@ $books = [
 $filteredBooks = array_filter($books,function($book){
     return $book['releaseYear'] > 2000;
 });
-?>
-        <ul>
-        <?php foreach ( $filteredBooks as $book): ?>
-            <li>
-                <a href="<?=$book['purchaseUrl']?>">
-                    <?=$book['name']?>(<?=$book['releaseYear']?>)
-                </a>
-            </li>
-        <?php endforeach?>
-        </ul>
-</body>
-</html>
+
+require "index.view.php";
