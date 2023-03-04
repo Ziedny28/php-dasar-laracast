@@ -9,21 +9,17 @@
         body{
             display: grid;
             place-items: center;
-            height: 100vh;
             margin:0;
             font-family: sans-serif;
         }
     </style>
 </head>
 <body>
+        <h1><?=$bussiness['name']?></h1>
         <ul>
-        <?php foreach ( $filteredBooks as $book): ?>
-            <li>
-                <a href="<?=$book['purchaseUrl']?>">
-                    <?=$book['name']?>(<?=$book['releaseYear']?>)
-                </a>
-            </li>
-        <?php endforeach?>
+            <?php foreach($bussiness['categories'] as $category) : ?>
+            <li><?=$category?></li>
+            <?php endforeach ?>
         </ul>
 </body>
 </html>
