@@ -7,17 +7,15 @@ require 'functions.php';
 
 //connet to mysql database
 
-class Person{
-    public $name;
-    public $age;
+//watch ur db name
+$dsn = "mysql:localhost;port=3306;dbname=weblanjut_laracasts_myapp;user=root;charset=utf8mb4";
+$pdo = new PDO($dsn);
 
-    public function Breathe(){
-        echo $this->name.' is breathin'; 
-    }
+$statement = $pdo->prepare("select * from posts");
+$statement->execute();
+
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+foreach($posts as $post){
+    echo '<li>'.$post['title'].'</li>';
 }
-
-$person = new Person();
-$person->name='John Doe';
-$person->age=25;
-
-$person->Breathe();
