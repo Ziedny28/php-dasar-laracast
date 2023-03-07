@@ -1,11 +1,13 @@
 <?php
 class Database{
     public $connection;
-    public function __construct()
+    public function __construct($config,$username='root',$password='')
     {        
-        //watch ur db name
-        $dsn = "mysql:localhost;port=3306;dbname=weblanjut_laracasts_myapp;user=root;charset=utf8mb4";
-        $this->connection = new PDO($dsn);
+        $dsn = 'mysql:'.http_build_query($config,'',';');
+
+        $this->connection = new PDO($dsn,$username,$password,[
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]);
     }
     public function Query($query){
         

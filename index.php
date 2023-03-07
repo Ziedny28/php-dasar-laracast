@@ -6,7 +6,10 @@ require 'Database.php';
 
 // require 'router.php';
 
-$db = new Database();
-$posts = $db->Query("select * from posts where id > 1")->fetch(PDO::FETCH_ASSOC);
+//watch ur db name
+$config = require('config.php');
+
+$db = new Database($config['database']);
+$posts = $db->Query("select * from posts")->fetchAll();
 
 dd($posts);
