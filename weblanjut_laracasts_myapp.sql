@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2023 at 02:59 PM
+-- Generation Time: Mar 12, 2023 at 03:05 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -39,7 +39,10 @@ CREATE TABLE `notes` (
 
 INSERT INTO `notes` (`id`, `body`, `user_id`) VALUES
 (1, 'a Note', 1),
-(2, 'second Note', 1);
+(2, 'second Note', 1),
+(3, 'third Note', 2),
+(4, 'fourth Note', 2),
+(5, 'learnin UE', 1);
 
 -- --------------------------------------------------------
 
@@ -58,7 +61,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`) VALUES
-(1, 'Ziedny', 'ziedny@gmail.com');
+(1, 'Ziedny', 'ziedny@gmail.com'),
+(2, 'User2', 'user_2@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -86,13 +90,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
